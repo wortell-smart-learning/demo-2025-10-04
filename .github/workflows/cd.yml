@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
   id-token: write # For OIDC to Azure
 
 concurrency:
@@ -25,6 +26,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: adf-arm-template
+          github-token: ${{ secrets.GITHUB_TOKEN }} # auth for cross-run download
+          run-id: ${{ github.event.workflow_run.id }} # the CI run that triggered this
 
       - name: Log in to Azure
         uses: azure/login@v2
