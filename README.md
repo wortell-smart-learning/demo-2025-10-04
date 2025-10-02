@@ -1,10 +1,8 @@
-# Actions DE Demo V3
+# Demo Data Saturday
 
 This repository contains a sample Data Engineering project that can be deployed using GitHub Actions.
 
-See `requirements.md` for the full details of the demo.
-
-## Setup
+# Setup
 
 For the demos to execute, we need to set up the following:
 
@@ -19,4 +17,3 @@ For the demos to execute, we need to set up the following:
 4. Inside GitHub, add the following variables per environment:
    * LOCATION (for example `westeurope`)
    * RESOURCE_GROUP
-
