@@ -10,6 +10,7 @@ on:
       - dev
     paths:
       - 'platform/adf/**'
+      - '.github/workflows/**'
 
 jobs:
   build-and-test:
