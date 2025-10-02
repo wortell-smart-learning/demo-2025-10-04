@@ -39,3 +39,4 @@ jobs:
         with:
           name: adf-arm-template
           path: adf-output
+
