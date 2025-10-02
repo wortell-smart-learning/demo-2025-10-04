@@ -44,4 +44,5 @@ jobs:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           resourceGroupName: ${{ vars.RESOURCE_GROUP }}
           template: ARMTemplateForFactory.json
-          parameters: ARMTemplateParametersForFactory.json
+          parameters: ARMTemplateParametersForFactory.json factoryName=adf-${{ vars.RESOURCE_GROUP }}
+          
