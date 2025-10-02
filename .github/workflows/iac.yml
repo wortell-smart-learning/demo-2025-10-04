@@ -33,12 +33,12 @@ jobs:
         uses: hashicorp/setup-terraform@v2
 
       - name: Terraform Init
-        run: terraform init -backend-config="resource_group_name=continuous-training" -backend-config="storage_account_name=tfbackendstorewortell" -backend-config="container_name=tfstate" -backend-config="key=devdemo20251002.terraform.tfstate" -backend-config="use_oidc=true"
-        working-directory: ./terraform
+        run: terraform init -backend-config="resource_group_name=continuous-training" -backend-config="storage_account_name=tfbackendstorewortell" -backend-config="container_name=tfstate" -backend-config="key=devdemo202510021615.terraform.tfstate" -backend-config="use_oidc=true"
+        working-directory: ./infra
 
       - name: Terraform Plan
         run: terraform plan -out=tfplan
-        working-directory: ./terraform
+        working-directory: ./infra
         env:
           TF_VAR_resource_group_name: ${{ vars.RESOURCE_GROUP }}
           TF_VAR_location: ${{ vars.LOCATION }}
@@ -46,4 +46,4 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve tfplan
-        working-directory: ./terraform
+        working-directory: ./infra
