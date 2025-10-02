@@ -29,7 +29,7 @@ jobs:
         if: github.event_name == 'push'
         run: |
           npm install -g @microsoft/azure-data-factory-utilities
-          npm exec -- adf-publish src/adf --output-path adf-output
+          npm run start export platform/adf /subscriptions/8cafe4d5-ec51-40c7-9703-49e869941388/resourceGroups/demo20251004-dev/providers/Microsoft.DataFactory/factories/adf-demo20251004-dev adf-output
 
       - name: Upload ADF Artifact
         if: github.event_name == 'push'
